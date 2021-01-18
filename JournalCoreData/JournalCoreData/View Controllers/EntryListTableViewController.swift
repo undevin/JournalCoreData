@@ -35,6 +35,14 @@ class EntryListTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let entry = EntryController.shared.entries[indexPath.row]
+            EntryController.shared.deleteEntry(entry: entry)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 
     // MARK: - Navigation
 

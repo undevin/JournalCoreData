@@ -36,4 +36,10 @@ class EntryController {
         entry.timestamp = Date()
         CoreDataStack.saveContext()
     }
+    
+    func deleteEntry(entry: Entry) {
+        entry.managedObjectContext?.delete(entry)
+        CoreDataStack.saveContext()
+        fetchEntries()
+    }
 }
