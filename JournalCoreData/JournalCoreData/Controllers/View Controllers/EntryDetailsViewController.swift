@@ -17,6 +17,7 @@ class EntryDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         updateViews()
+        bodyTextField.layer.borderWidth = 1
     }
     
     // MARK: - Properties
